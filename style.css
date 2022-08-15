@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222327;
+}
+
+.navigation{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    width: 80px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: -20px 20px 50px #0000000d;
+    transition: 0.5s;
+}
+
+.navigation.active{
+    width: 400px;
+
+}
+
+.navigation .menu_toggle{
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 80px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #0000000d;
+}
+
+.navigation .menu_toggle::before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
+
+.navigation .menu_toggle::after{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 2px;
+    background: #333;
+    box-shadow: 0 -10px #333;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+.navigation.active .menu_toggle::before{
+    transform: translateY(0px) rotate(45deg);
+}
+
+.navigation.active .menu_toggle::after{
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 #333;
+}
+
+.navigation .profile{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.navigation .profile .foto{
+    position: relative;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.navigation.active .profile .foto{
+    width: 200px;
+    height: 200px;
+}
+
+.navigation .profile .foto img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.navigation .menu{
+     position: relative;
+     width: 100%;
+     padding: 10px;
+     border-top: 1px solid #0000000d;
+     transition: 0.5s;
+}
+
+.navigation.active .menu{
+    padding: 10px 20px;
+}
+
+.navigation .menu li{
+    list-style: none;
+}
+
+.navigation .menu li a{
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    color: #111;
+    border-radius: 10px;
+}
+
+.navigation .menu li a:hover{
+    background: #2196f3;
+    color: #fff;
+}
+
+.navigation .menu li a .icon{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.navigation .menu li a .text{
+    position: relative;
+    height: 60px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+}
